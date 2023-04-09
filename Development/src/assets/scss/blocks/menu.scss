@@ -1,0 +1,138 @@
+.menu {
+  &__item {
+    position: relative;
+    margin: 0 0 0 10rem;
+    font-size: 2.3rem;
+
+    // &--account {
+    //   margin: 0 0 0 15rem;
+    // }
+  }
+
+  &__icon {
+    display: none;
+  }
+
+  &__link {
+    color: $grey;
+  }
+
+  &__link--account {
+    color: $white;
+    font-size: 1.6rem;
+  }
+}
+
+/* Адаптив */
+
+@media (min-width: $tablet-bp) {
+  .menu {
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      padding: 10px 0;
+    }
+
+    &__link {
+      transition: all 0.3s ease 0s;
+    }
+  }
+}
+
+@media (max-width: $tablet-bp) {
+  .menu {
+    &__icon {
+      z-index: 5;
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    &__icon::before,
+    &__icon::after {
+      left: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: all 0.3s ease 0s;
+      background-color: #fff;
+    }
+
+    &__icon::before,
+    &__icon::after {
+      content: "";
+    }
+
+    &__icon::before {
+      top: 2px;
+    }
+
+    &__icon::after {
+      bottom: 2px;
+    }
+
+    &__icon._active::before {
+      top: 50%;
+      transform: rotate(-45deg) translate(0px, -50%);
+    }
+
+    &__icon._active::after {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0px, 50%);
+    }
+
+    &__body {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      left: -100%;
+      background-color: $secondary;
+      padding: 100px 30px 30px 30px;
+      transition: left 0.3s ease 0s;
+      overflow: auto;
+    }
+
+    &__body._active {
+      left: 0;
+    }
+
+    &__body::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: $header-height;
+      z-index: 2;
+    }
+
+    &__item {
+      flex-wrap: wrap;
+      margin: 0 0 30px 0;
+    }
+
+    &__item:last-child {
+      margin: 9rem 0 0 0;
+    }
+
+    &__link {
+      font-size: 24px;
+    }
+  }
+}
+
+body._touch .menu__item {
+  display: flex;
+  align-items: center;
+}
+
+body._touch .menu__link {
+  flex: 1 1 auto;
+}

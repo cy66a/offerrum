@@ -1,0 +1,12 @@
+.modal#modal
+  .container
+    .modal__content
+      button.modal__close(type='button')
+        img(src='assets/images/icons/modal-close.svg', alt='Закрыть')
+      h2.modal__title Начни прямо сейчас!
+      p.modal__text.
+        Получи все нужные навыки для заработка на NFT всего за 28 дней!
+      form.modal__form.form(action='/', method='post')
+        input.form__email(type='email', placeholder='Ваш email')
+        button.form__button.button.button--modal(type='submit').
+           Оплатить

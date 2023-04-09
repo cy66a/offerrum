@@ -1,0 +1,49 @@
+.button {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1;
+  transition: all 0.3s ease;
+
+  &--modal {
+    padding: 2rem 3rem;
+    background: linear-gradient(92.84deg, #1dd844 1.44%, #cbf62e 126.29%);
+    font-size: 2rem;
+    color: $black;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px 5px rgba($green, 0.5);
+
+    &:disabled {
+      color: rgba($black, 0.2);
+    }
+
+    &:hover {
+      box-shadow: 0 0 20px 10px rgba($green, 0.5);
+    }
+
+    &:active {
+      box-shadow: 0 0 10px 5px rgba($green, 0.5);
+    }
+  }
+
+  &--account {
+    background: none;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 1.5rem;
+    padding: 1.6rem 2rem;
+    font-size: 1.6rem;
+    max-width: 17.5rem;
+    width: 100%;
+
+    &:hover {
+      color: $light-green;
+      border: 1px solid $light-green;
+    }
+
+    &:active {
+      background: rgba($color: $light-green, $alpha: 0.05);
+    }
+  }
+}

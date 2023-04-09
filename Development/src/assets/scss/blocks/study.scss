@@ -1,0 +1,120 @@
+.study {
+  padding: 20rem 0;
+  min-height: 100vh;
+
+  @include breakpoint($tablet-bp) {
+    padding: 10rem 0;
+  }
+
+  &__inner {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: url("../images/gradient-bg.svg") top -50% right -50% no-repeat,
+      url("../images/gradient-bg.svg") bottom -50% left -50% no-repeat,
+      url("../images/gradient-2-bg.svg") bottom 10% right 10% no-repeat, $primary;
+    position: relative;
+    padding: 13rem 3rem;
+    width: 100%;
+    max-width: 128rem;
+    border-radius: 2rem;
+
+    @include breakpoint($tablet-bp) {
+      background: url("../images/gradient-bg.svg") top -50% right -50% no-repeat,
+      url("../images/gradient-bg.svg") bottom -50% left -50% no-repeat,
+      url("../images/gradient-2-bg.svg") bottom right no-repeat, $primary;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      width: 15rem;
+      height: 15rem;
+      background: radial-gradient(95% 95% at 25% 5%, #dea8ff 0%, #9d6ad9 45%, #7a2bf6 100%);
+      top: -9.5rem;
+      right: 12rem;
+
+      @include breakpoint($tablet-bp) {
+        right: 0;
+        top: -5rem;
+        width: 9rem;
+        height: 9rem;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    @include adaptiv-font(45, 23);
+    font-weight: 600;
+    margin: 0 0 6.5rem 0;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      width: 8rem;
+      height: 8rem;
+      background: radial-gradient(63.25% 73.53% at 65.32% 77.65%, #045dfa 0%, #0fc1d7 83.16%, #06f6c7 100%);
+      bottom: 0;
+      left: -16rem;
+
+      @include breakpoint($tablet-bp) {
+        width: 2rem;
+        height: 2rem;
+        bottom: -2rem;
+        left: -2rem;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 5rem;
+    row-gap: 7rem;
+    max-width: 65rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+    position: relative;
+    padding: 4.5rem 2rem;
+    max-width: 30rem;
+    // width: 100%;
+    background: rgba($color: $secondary, $alpha: 0.7);
+    border-radius: 2rem;
+    z-index: 2;
+
+    &::before {
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      content: "";
+      width: 86%;
+      height: 2rem;
+      border-radius: 0 0 2rem 2rem;
+      background: rgba($color: $secondary, $alpha: 0.6);
+    }
+  }
+
+  &__image {
+    width: 150px;
+    margin: 0 0 2rem 0;
+  }
+
+  &__text {
+    text-align: center;
+    @include adaptiv-font(19, 16);
+  }
+}
