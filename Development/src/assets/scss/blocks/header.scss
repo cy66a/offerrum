@@ -1,29 +1,30 @@
 .header {
   position: fixed;
-  top: 0;
   left: 0;
-  width: 100%;
+  top: 0;
   z-index: 10;
-  transition: all ease .3s;
-  
-  &.active {
-    background: $darkgrey;
-  }
+  width: 100%;
+  transition: all ease 0.3s;
 
   &__inner {
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
     min-height: $header-height;
   }
 
   &__logo {
     @include adaptiv-font(29, 18);
+
+    position: relative;
+    z-index: 5;
     line-height: 1;
     text-transform: uppercase;
     color: $white;
-    position: relative;
-    z-index: 5;
+  }
+
+  &.active {
+    background: $darkgrey;
   }
 }
